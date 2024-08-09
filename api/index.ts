@@ -1,9 +1,9 @@
 import express from 'express';
-import passwordsRouter from "./routers/passwaods";
+import passwordsRouter from "./routers/passwords";
 import cors from 'cors';
 
 const app = express();
-const port = 8000;
+const port = 8040;
 
 app.use(cors());
 app.use(express.json());
