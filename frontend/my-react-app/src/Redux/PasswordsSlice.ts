@@ -1,14 +1,12 @@
 
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Password, Pin} from "../type.ts";
+import {Pin} from "../type.ts";
 import {fetchPasswordsGetDecode,fetchPasswordsGetEncode, fetchPostPasswordsDecode, fetchPostPasswordsEncode} from "./PasswordsThunk.ts";
 interface PasswordsState {
-    passwords: Password[];
     fetchLoading: boolean;
     password:Pin[]
 }
 const initialState: PasswordsState = {
-    passwords: [],
     fetchLoading: false,
     password:[],
 };

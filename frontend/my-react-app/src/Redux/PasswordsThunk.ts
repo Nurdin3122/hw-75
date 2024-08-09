@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {Password, Pin} from "../type.ts";
+import {PasswordMutation, Pin} from "../type.ts";
 import axiosApi from "../axiosApi.ts";
 
 interface DecodeRequest {
@@ -9,18 +9,16 @@ interface DecodeRequest {
 
 export const fetchPostPasswordsDecode = createAsyncThunk(
     "passwords/fetchPostDecode",
-    async (newPasswords:Password) => {
-        console.log(newPasswords,"POST")
-        const response = await axiosApi.post<Password>('/passwords/decode',newPasswords);
+    async (newPasswords:PasswordMutation) => {
+        const response = await axiosApi.post<PasswordMutation>('/passwords/decode',newPasswords);
         return response.data;
     }
 );
 
-export const fetchPostPasswordsEncode = createAsyncThunk<Password[],Password>(
+export const fetchPostPasswordsEncode = createAsyncThunk<PasswordMutation[],PasswordMutation>(
     "passwords/fetchPostEncode",
-    async (newPasswords:Password) => {
-        console.log(newPasswords,"POST2")
-        const response = await axiosApi.post<Password>('/passwords/encode',newPasswords);
+    async (newPasswords:PasswordMutation) => {
+        const response = await axiosApi.post<PasswordMutation>('/passwords/encode',newPasswords);
         return response.data;
     }
 );

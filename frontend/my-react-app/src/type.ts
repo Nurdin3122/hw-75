@@ -1,9 +1,3 @@
-export interface Password {
-    id:string
-    password:string;
-    message:string;
-    encrypt:boolean;
-}
 
 export interface PasswordMutation {
     password:string;
@@ -12,5 +6,6 @@ export interface PasswordMutation {
 }
 
 export interface Pin {
+    id:string
     pinCode:string;
 }

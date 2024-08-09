@@ -17,12 +17,8 @@ const emptyState:PasswordMutation = {
 
 const App = () => {
     const dispatch:AppDispatch = useDispatch();
-    const passwords = useSelector((state:RootState) => state.passwords.passwords);
-    console.log("passwords",passwords)
-    const initialState = passwords ? {...passwords} : emptyState;
-    const [newPassword, setNewPassword] = useState<PasswordMutation>(initialState);
-   const password = useSelector((state:RootState) => state.passwords.password)
-    console.log("password:",password)
+    const password = useSelector((state:RootState) => state.passwords.password)
+    const [newPassword, setNewPassword] = useState<PasswordMutation>(emptyState);
 
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
